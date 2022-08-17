@@ -18,10 +18,10 @@ const database = {
         { id: 4, techCapabilities: "Ultra Package", price: 125 }
     ],
     wheels: [
-        { id: 1, colorName: "17-inch Pair Radial", price: 100 },
-        { id: 2, colorName: "17-inch Pair Radial Black", price: 220 },
-        { id: 3, colorName: "18-inch Pair Radial Silver", price: 125 },
-        { id: 4, colorName: "18-inch Pair Radial Black", price: 125 }
+        { id: 1, radialPair: "17-inch Pair Radial", price: 100 },
+        { id: 2, radialPair: "17-inch Pair Radial Black", price: 220 },
+        { id: 3, radialPair: "18-inch Pair Radial Silver", price: 125 },
+        { id: 4, radialPair: "18-inch Pair Radial Black", price: 125 }
     ],
     finishedCar: {}
 }
@@ -48,4 +48,6 @@ export const getWheels = () => {
 export const getfinishedCar = () => {
     return database.finishedCar.map(theCar => ({...theCar}))
 }
+
+
 

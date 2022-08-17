@@ -1,24 +1,28 @@
+import { interiorsHTML } from "./interiors.js"
+import { paintColorHTML } from "./paintColors.js"
+import { technologyHTML } from "./technologies.js"
+import { wheelsHTML } from "./wheels.js"
 
 
 export const carsRus = () => {
     return `
-    <h1>Kneel Diamonds</h1>
+    <h1>Cars R Us</h1>
     <article class="choices">
         <section class="choices__Colors options">
             <h2>Paint Colors</h2>
-            <div> HERE GOES THE LIST OF COLORS </div>
+            <div> ${paintColorHTML()} </div>
         </section>
         <section class="choices__interiors options">
             <h2>Interiors</h2>
-            <div> HERE GOES THE LIST OF INTERIORS </div>
+            <div> ${interiorsHTML()} </div>
         </section>
         <section class="choices__tech options">
             <h2>Technologies</h2>
-            <div> HERE GOES THE LIST OF TECHNOLOGIES </div>
+            <div> ${technologyHTML()} </div>
         </section>
         <section class="choices__wheels options">
             <h2>Wheels Options</h2>
-            <div> HERE GOES THE LIST OF WHEELS </div>
+            <div> ${wheelsHTML()} </div>
         </section>
     </article>
     <article>

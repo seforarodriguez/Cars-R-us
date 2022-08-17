@@ -1,4 +1,4 @@
-import { carsRus } from "carsRus.js"
+import { carsRus } from "./scripts/carsRus.js"
 const mainContainer = document.querySelector("#container")
 
 const renderAllhtml = () => {
