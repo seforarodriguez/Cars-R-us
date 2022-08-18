@@ -1,6 +1,11 @@
-import { getWheels } from "./database.js";
+import { getWheels, setWheels } from "./database.js";
 
 const wheels = getWheels()
+
+document.addEventListener("change", event => {
+    if(event.target.id === "wheelsSelect")
+    setWheels((parseInt(event.target.value)))
+})
 
 export const wheelsHTML = () => {
     let html = `<select id="wheelsSelect">

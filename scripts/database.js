@@ -23,7 +23,10 @@ const database = {
         { id: 3, radialPair: "18-inch Pair Radial Silver", price: 125 },
         { id: 4, radialPair: "18-inch Pair Radial Black", price: 125 }
     ],
-    finishedCar: {}
+    customOrders:[
+        { id: 1, techId:1, paintId: 4, interiorId: 2, wheelsId:4 },
+    ],
+    orderBuilder: {}
 }
 
 //This is exporting the different keys from the database object
@@ -45,9 +48,39 @@ export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
 }
 
-export const getfinishedCar = () => {
-    return database.finishedCar.map(theCar => ({...theCar}))
+export const getOrder = () => {
+    return database.customOrders.map(order => ({...order}))
 }
+
+export const setpaintColors = (id) => {
+    return database.orderBuilder.paintId = id
+}
+
+export const setInteriors = (id) => {
+    return database.orderBuilder.interiorId = id
+}
+
+export const setTechnologies = (id) => {
+    return database.orderBuilder.techId = id
+}
+
+export const setWheels = (id) => {
+    return database.orderBuilder.wheelsId = id
+}
+
+
+
+
+export const addCustomOrder = () => {
+    const newOrder = {...database.orderBuilder}
+    const lastIndex = database.customOrders.length - 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
+    newOrder.timestamp = Date.now()
+    database.customOrders.push(newOrder)
+    database.orderBuilder = {}
+    document.dispatchEvent(new CustomEvent("stateChanged"))
+};
+
 
 
 

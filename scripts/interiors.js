@@ -1,6 +1,11 @@
-import { getInteriors } from "./database.js"; 
+import { getInteriors, setInteriors } from "./database.js"; 
 
 const interiors = getInteriors()
+
+document.addEventListener("change", event => {
+    if(event.target.id === "interiorSelect")
+    setInteriors((parseInt(event.target.value)))
+})
 
 export const interiorsHTML = () => {
     let html = `<select id="interiorSelect">

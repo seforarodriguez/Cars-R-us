@@ -1,0 +1,29 @@
+body {
+    color:white;
+}
+
+.choices {
+    display:flex;
+    flex-direction: row;
+}
+
+.options {
+display: flex;
+flex-direction: column;
+background-color: gray;
+padding: 4em;
+margin: 3em;
+border-radius: 5em;
+border: dotted;
+opacity: 0.8
+}
+
+.eachOrder {
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    padding: 4em;
+    margin: 1em;
+    border: dotted;
+    border-radius: 5em; 
+}

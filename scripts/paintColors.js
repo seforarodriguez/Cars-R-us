@@ -1,6 +1,12 @@
-import { getPaintColors } from "./database.js";
+import { getPaintColors, setpaintColors } from "./database.js";
 
 const paintColors = getPaintColors()
+
+document.addEventListener("change", event => {
+    if(event.target.id === "paintColorSelect")
+    setpaintColors(parseInt(event.target.value))
+})
+
 
 export const paintColorHTML = () => {
     let html = `<select id="paintColorSelect">
